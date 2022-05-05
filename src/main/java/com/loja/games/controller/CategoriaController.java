@@ -1,6 +1,7 @@
 package com.loja.games.controller;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -21,15 +22,16 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.loja.games.model.Categoria;
-import com.loja.games.model.Produto;
 import com.loja.games.repository.CategoriaRepository;
 
 @RestController
 @RequestMapping("/Categoria")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CategoriaController {
+	
 	@Autowired
 	private CategoriaRepository categoriaRepository;
+	
 
 	@GetMapping
 	public ResponseEntity<List<Categoria>> getAll() {
@@ -43,8 +45,8 @@ public class CategoriaController {
 	}
 
 	@GetMapping("/tituloCategoria/{tituloCategoria}")
-	public ResponseEntity<List<Categoria>> getByTituloCategoria(@PathVariable String tituloCategoria) {
-		return ResponseEntity.ok(categoriaRepository.findAllByTituloCategoriaContainingIgnoreCase(tituloCategoria));
+	public ResponseEntity<List<Categoria>> getByTituloCategoria(@PathVariable String nomeCategoria) {
+		return ResponseEntity.ok(categoriaRepository.findAllByTituloCategoriaContainingIgnoreCase(nomeCategoria));
 	}
 	
 	@PostMapping

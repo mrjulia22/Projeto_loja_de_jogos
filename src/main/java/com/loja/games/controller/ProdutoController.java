@@ -1,6 +1,7 @@
 package com.loja.games.controller;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -20,7 +21,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.loja.games.model.Categoria;
 import com.loja.games.model.Produto;
 import com.loja.games.repository.ProdutoRepository;
 
